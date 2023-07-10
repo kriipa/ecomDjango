@@ -64,3 +64,5 @@ class SearchView(Base):
 
         return render(request, 'search.html', self.views)
 
+def signup(request):
+    return render(request, 'signup.html')
