@@ -2,6 +2,19 @@
 {% load static %}
 {% block content %}
         
+
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+            <div class="container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Products</a></li>
+                    <li class="breadcrumb-item active">Login & Register</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+        
         <!-- Login Start -->
         <div class="login">
             <div class="container-fluid">
@@ -9,6 +22,11 @@
                     <div class="col-lg-6">
                         <form action="" method="POST"> 
                             {% csrf_token %}
+                            {% for message in messages %}
+                                <font color = "red">
+                                    <center>{{message}}</center>
+                                </font>
+                            {% endfor%}
                             <div class="register-form">
                                 <div class="row">
                                     <div class="col-md-6">
